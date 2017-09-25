@@ -23,8 +23,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitData(View view) {
-        EditText inputNama = (EditText) findViewById(R.id.nama_textview);
+        EditText inputNama = (EditText) findViewById(R.id.editTextNama);
         String nama = inputNama.getText().toString();
+
+        EditText inputTelepon = (EditText) findViewById(R.id.editTextTelepon);
+        String telepon = inputTelepon.getText().toString();
 
         RadioGroup jenisKelamin = (RadioGroup) findViewById(R.id.radioGroup_jenisKelamin);
         int pilihanJenisKelamin = jenisKelamin.getCheckedRadioButtonId();
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         boolean isMembaca = membacaCheckBox.isChecked();
 
         String dataAkhir = "Nama : " + nama + "\n";
+        dataAkhir = dataAkhir + "No Telepon : " + telepon + "\n";
         dataAkhir = dataAkhir + "Jenis Kelamin : " + radioButton_jenisKelamin + "\n";
         dataAkhir = dataAkhir + "Ukuran Sepatu : " + ukuran + "\n";
         dataAkhir = dataAkhir + "Hobi Membaca : " + isMembaca;
@@ -46,10 +50,16 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Kekecilan oiyyy", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        // TODO tambahkan method increment -->
-
         ukuran = ukuran - 1;
+        displaySepatu(ukuran);
+    }
+
+    public void increment(View view) {
+        if (ukuran >= 46) {
+            Toast.makeText(this, "Sepatunya jangan kegedean", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        ukuran = ukuran + 1;
         displaySepatu(ukuran);
     }
 

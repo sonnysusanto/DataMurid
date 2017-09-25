@@ -14,19 +14,18 @@
         android:hint="Nama"
         android:inputType="textPersonName" />
 
-    <!-- TODO tambahkan id pada EditText No HP-->
-    <!-- TODO tambahkan InputType number pada No HP -->
-
     <EditText
+        android:id="@+id/editTextTelepon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="No HP" />
+        android:hint="No HP"
+        android:inputType="phone" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Jenis Kelamin"
-        android:textColor="#FFF990" />
+        android:textColor="#000000" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -78,7 +77,11 @@
             android:layout_height="wrap_content"
             android:text="35" />
 
-        <!-- TODO tambahkan button + -->
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:onClick="increment"
+            android:text="+" />
     </LinearLayout>
 
     <TextView
@@ -92,7 +95,18 @@
         android:layout_height="wrap_content"
         android:text="Membaca" />
 
-    <!-- TODO tambahkan 2 checkbox Olahraga dan Komputer. Jangan lupa set ID nya -->
+    <CheckBox
+        android:id="@+id/checkBox_olahraga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olahraga" />
+
+    <CheckBox
+        android:id="@+id/checkBox_komputer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Komputer" />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
